@@ -49,7 +49,7 @@ class MatrixChainMultiplication
             m[i][i] = 0;
  
         // L is chain length.
-        for (L=2; L<n; L++)
+        for (L=2; L < n; L++)
         {
             for (i=1; i<n-L+1; i++)
             {
@@ -72,6 +72,7 @@ class MatrixChainMultiplication
  
     public static void main(String args[])
     {
+        System.out.println("Loading...\n\n");
         Random rand = new Random();
 
         List<Long> reTimes = new ArrayList<Long>();
@@ -79,9 +80,9 @@ class MatrixChainMultiplication
 
         int j = 0;
         while(j < 10) {
-            int arr[] = new int[26];
+            int arr[] = new int[16];
             int i = 0;
-            while(i <= 25) {
+            while(i <= 15) {
                 arr[i] = rand.nextInt(50) + 1;
                 i++;
             };
@@ -108,6 +109,8 @@ class MatrixChainMultiplication
 
             long secondAlgFinish = new Date().getTime();
             dyTimes.add(secondAlgFinish - secondAlgStart);
+
+            System.out.println(dyTimes.get(j));
 
             j++;
         }
